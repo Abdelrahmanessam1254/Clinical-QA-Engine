@@ -33,7 +33,7 @@ LLM_PROVIDER=google
 
 # API Keys (use the one that matches your LLM_PROVIDER)
 
-GOOGLE_API_KEY=AIzaSyBhMP9xC3FB28qs52JvJL90uEzbqGwsKxQ
+GOOGLE_API_KEY=your-gemeni-key-here
 # XAI_API_KEY=your-grok-key-here
 # OPENAI_API_KEY=sk-your-openai-key-here
 
@@ -127,25 +127,21 @@ The code makes it easy to swap just change one line.
 ### Tradeoffs I Made
 
 1. **Using an LLM instead of rules engine**
-
    - Pros: Flexible, handles nuance, easier to expand
    - Cons: Costs money per call, slower, less predictable
    - Why: The spec needs understanding of clinical language, not just pattern matching
 
 2. **Single file instead of modular structure**
-
    - Pros: Everything's right here, no jumping between files
    - Cons: Would get messy if this grew
    - Why: It's a proof of concept with one endpoint
 
 3. **Synchronous processing**
-
    - Pros: Simple to reason about
    - Cons: Request waits for LLM response (can be 2-5 seconds)
    - Why: No queue infrastructure for a demo, but I'd add async workers for production
 
 4. **No caching**
-
    - Pros: Always fresh analysis
    - Cons: Analyzing the same note twice costs 2x
    - Why: Didn't want to assume notes are immutable, but would add Redis for prod

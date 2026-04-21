@@ -1,0 +1,5 @@
+GitHub Repo: https://github.com/Abdelrahmanessam1254/Clinical-QA-Engine
+
+read me file is inside repo
+
+and also i explained my approach inside the read me file
